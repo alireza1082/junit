@@ -3,7 +3,8 @@ package test;
 import junitTest.MessageUtil;
 import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.Assert.*;
 
 public class test {
 
@@ -19,6 +20,23 @@ public class test {
     @Test
     public void testSalutationMessage() {
         System.out.println("Inside testSalutationMessage()");
-        Assert.assertEquals(message , messageUtil.printMessage());
+        assertEquals(message , messageUtil.printMessage());
+    }
+
+    @Test
+    public void testAdded() {
+        //test data
+        int num = 5;
+        String temp = null;
+        String str = "Junit is working fine";
+
+        //check for equality
+        assertEquals("Junit is working fine", str);
+
+        //check for false condition
+        assertFalse(num > 6);
+
+        //check for not null value
+        assertNull(temp);
     }
 }
